@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -19,6 +20,7 @@ public class InputNameController implements Initializable {
 
     public Socket socket;
     public DataOutputStream dataOutputStream;
+    public DataInputStream dataInputStream;
 
     @FXML
     private Button submitButton;
@@ -29,18 +31,19 @@ public class InputNameController implements Initializable {
     @FXML
     private void submitButtonPressed(ActionEvent e) throws IOException {
         Stage stage = (Stage) submitButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(FrontPageController.class.getResource("lobbyPage.fxml"));
-        Scene connectScene = new Scene(fxmlLoader.load(), 1080, 600);
+        FXMLLoader fxmlLoader = new FXMLLoader(FrontPageController.class.getResource("lobbyPageHostFirst.fxml"));
+        Scene lobbyPage = new Scene(fxmlLoader.load(), 1080, 600);
 
-        //Creating controller object of input name scene
-        LobbyPageController lobbyPageController = fxmlLoader.getController();
-        lobbyPageController.setHostName(nameField.getText());
+        //Creating controller object of input name scene and setting label equal
+        LobbyPageHostFirstController lobbyPageHostFirstController = fxmlLoader.getController();
+        lobbyPageHostFirstController.setHostName(nameField.getText());
+        lobbyPageHostFirstController.setSocket(socket);
 
         //Setting scene
-        stage.setScene(connectScene);
+        stage.setScene(lobbyPage);
         stage.show();
-        System.out.println(socket);
         sendNameInput();
+
     }
 
     public void setSocket(Socket socket){
