@@ -1,4 +1,4 @@
-JEOPARTY - Server
+JEOPARTY - Client
 _________________________________
 
 Game description:
@@ -26,8 +26,10 @@ The client asks you to fill out the IP address and port.
 You client will then switch to a lobby and the first player who joins becomes the host of the game. 
 When all 3 players are connected the game can begin.
 
+DISCLAMER: On the question board page, only the five buttons under the first category work. One question per game.
+
 Link to github client repository:
-https://github.com/VictorHjort/frontEnd
+https://github.com/VictorHjort/client
 
 Link to github server repository:
 https://github.com/Julius-Winther/PCSS-G301
