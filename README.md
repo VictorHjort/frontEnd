@@ -27,6 +27,8 @@ You client will then switch to a lobby and the first player who joins becomes th
 When all 3 players are connected the game can begin.
 
 Link to github client repository:
+https://github.com/VictorHjort/frontEnd
 
 Link to github server repository:
+https://github.com/Julius-Winther/PCSS-G301
 
