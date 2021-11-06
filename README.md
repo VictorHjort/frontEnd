@@ -1,4 +1,4 @@
-JEOPARTY - Server
+JEOPARTY - Client
 _________________________________
 
 Game description:
