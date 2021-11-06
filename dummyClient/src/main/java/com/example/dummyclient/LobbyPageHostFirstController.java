@@ -22,10 +22,10 @@ public class LobbyPageHostFirstController implements Initializable {
 
     public Socket socket;
     public DataInputStream dataInputStream;
-    public boolean lobbyFilled;
-    InputTask inputTask;
-    public int alert = 0;
+    public boolean lobbyFilled, isHost;
+    public int alert = 0, questionNumber;
     public String playerName;
+    InputTask inputTask;
 
     @FXML
     private Label playerOneName, playerTwoName, playerThreeName;
@@ -43,27 +43,43 @@ public class LobbyPageHostFirstController implements Initializable {
             notFull.show();
             alert ++;
         }
-        else {
+        //>Happens for host
+        else if (isHost) {
             Stage stage = (Stage) startButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(FrontPageController.class.getResource("questionBoard.fxml"));
             Scene questionBoard = new Scene(fxmlLoader.load(), 1080, 600);
 
             //Creating controller object of QuestionBoard name scene
             QuestionBoardController questionBoardController = fxmlLoader.getController();
-
+            questionBoardController.setSocket(socket);
+            questionBoardController.setHost(isHost);
+            //> reads player names from server
             for (int i = 0; i < 3; i++) {
-               playerName = dataInputStream.readUTF();
-               questionBoardController.setPlayeName(i, playerName);
+                playerName = dataInputStream.readUTF();
+                questionBoardController.setPlayeName(i, playerName);
             }
-
 
             stage.setScene(questionBoard);
             stage.show();
+        }
+        //>Happens for not host
 
+        else {
+            Stage stage = (Stage) startButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(FrontPageController.class.getResource("showQuestion.fxml"));
+            Scene showQuestionButtonScene = new Scene(fxmlLoader.load(), 1080, 600);
 
+            //Creating controller object of QuestionBoard name scene
+            ShowQuestionController showQuestionController = fxmlLoader.getController();
+
+            showQuestionController.setSocket(socket);
+            stage.setScene(showQuestionButtonScene);
+            stage.show();
         }
 
     }
+
+
 
     public void setHostName(String name){
         playerOneName.setText(name);
@@ -71,6 +87,7 @@ public class LobbyPageHostFirstController implements Initializable {
     public void setPlayerTwoName(String name) {playerTwoName.setText(name);}
     public void setPlayerThreeName(String name) {playerThreeName.setText(name);}
     public void setSocket(Socket socket) {this.socket=socket;}
+    public void setIsHost(boolean isHost) {this.isHost = isHost;}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }

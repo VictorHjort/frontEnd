@@ -107,7 +107,7 @@
             <VBox alignment="CENTER" prefHeight="479.0" prefWidth="139.0">
                 <VBox prefHeight="200.0" prefWidth="100.0">
                     <children>
-                        <Button fx:id="cat1_100" mnemonicParsing="false" prefHeight="100.0" prefWidth="155.0" text="100">
+                        <Button fx:id="cat1_100" mnemonicParsing="false" onAction="#questionOneButtonPressed" prefHeight="100.0" prefWidth="155.0" text="100">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -115,7 +115,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Button fx:id="cat1_200" mnemonicParsing="false" prefHeight="100.0" prefWidth="155.0" text="200">
+                        <Button fx:id="cat1_200" mnemonicParsing="false" onAction="#questionTwoButtonPressed" prefHeight="100.0" prefWidth="155.0" text="200">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -125,7 +125,7 @@
                         </Button>
                     </children>
                 </VBox>
-                <Button fx:id="cat1_300" mnemonicParsing="false" prefHeight="100.0" prefWidth="155.0" text="300">
+                <Button fx:id="cat1_300" mnemonicParsing="false" onAction="#questionThreeButtonPressed" prefHeight="100.0" prefWidth="155.0" text="300">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -133,7 +133,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="cat1_400" mnemonicParsing="false" prefHeight="100.0" prefWidth="155.0" text="400">
+                <Button fx:id="cat1_400" mnemonicParsing="false" onAction="#questionFourButtonPressed" prefHeight="100.0" prefWidth="155.0" text="400">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -141,7 +141,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="cat1_500" mnemonicParsing="false" prefHeight="100.0" prefWidth="155.0" text="500">
+                <Button fx:id="cat1_500" mnemonicParsing="false" onAction="#questionFiveButtonPressed" prefHeight="100.0" prefWidth="155.0" text="500">
                     <font>
                         <Font size="25.0" />
                     </font>

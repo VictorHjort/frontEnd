@@ -14,13 +14,15 @@ import java.net.Socket;
 
 public class ConnectPageController implements Serializable {
 
+    public static Socket socket;
+    public boolean isHost;
+
     @FXML
     private Button connectButton;
 
     @FXML
     private TextField ipField, portField;
 
-    public static Socket socket;
 
     @FXML
     private void connectButtonPressed(ActionEvent e) throws IOException {
@@ -36,6 +38,7 @@ public class ConnectPageController implements Serializable {
         //Creating controller object of input name scene
         InputNameController inputNameController = fxmlLoader.getController();
         inputNameController.setSocket(socket);
+        inputNameController.setHost(isHost);
 
         stage.setScene(connectScene);
         stage.show();
@@ -44,7 +47,7 @@ public class ConnectPageController implements Serializable {
     private void joinServer(String ipText, int portText) throws IOException {
         socket = new Socket(ipText, portText);
         DataInputStream input = new DataInputStream(socket.getInputStream());
-        boolean isHost = input.readBoolean();
+        isHost = input.readBoolean();
         System.out.println(isHost);
     }
 

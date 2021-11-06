@@ -21,6 +21,7 @@ public class InputNameController implements Initializable {
     public Socket socket;
     public DataOutputStream dataOutputStream;
     public DataInputStream dataInputStream;
+    public boolean isHost;
 
     @FXML
     private Button submitButton;
@@ -38,6 +39,7 @@ public class InputNameController implements Initializable {
         LobbyPageHostFirstController lobbyPageHostFirstController = fxmlLoader.getController();
         lobbyPageHostFirstController.setHostName(nameField.getText());
         lobbyPageHostFirstController.setSocket(socket);
+        lobbyPageHostFirstController.setIsHost(isHost);
 
         //Setting scene
         stage.setScene(lobbyPage);
@@ -49,6 +51,8 @@ public class InputNameController implements Initializable {
     public void setSocket(Socket socket){
         this.socket = socket;
     }
+
+    public void setHost(Boolean isHost){this.isHost = isHost;}
 
     public void sendNameInput() throws IOException
     {

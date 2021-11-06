@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dummyclient.ShowQuestionController">
+   <children>
+      <Button fx:id="showQuestionButton" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="200.0" onAction="#showQuestionButtonPressed" prefHeight="66.0" prefWidth="249.0" style="-fx-background-color: #FFF6E2;" text="Show me question daddy!" textFill="#944110" />
+   </children>
+</AnchorPane>
