@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dummyclient.QuestionAndAnswer">
+    <Rectangle id="background" arcHeight="5.0" arcWidth="5.0" fill="#fb7c2c" height="600" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1080" AnchorPane.leftAnchor="0.0" />
+   <Button fx:id="doneButton" layoutX="900.0" layoutY="500.0" mnemonicParsing="false" onAction="#doneButtonPressed" text="Done">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+   </Button>
+    <Label fx:id="questionLabel" alignment="CENTER" layoutY="186.0" prefHeight="200.0" prefWidth="1080.0" text="Question goes here + din mor" textAlignment="CENTER">
+        <font>
+            <Font size="25.0" />
+        </font></Label>
+    <Label fx:id="answerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="316.0" prefHeight="262.0" prefWidth="1080.0" text="Uhh What could the answer be?">
+        <font>
+            <Font size="25.0" />
+        </font></Label>
+</AnchorPane>
